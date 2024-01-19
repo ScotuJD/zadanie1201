@@ -1,27 +1,35 @@
-import React, { Component } from "react";
+import React from "react";
 import styled from "styled-components";
 import ZstLogoImageComponent from "../images_component/logo_zst";
+import "./header_panel.css";
 
 const HeaderCntPanel = styled.div`
   margin: 0;
   padding: 20px;
   width: 100%;
   height: auto;
-  background-color: firebrick;
+  background: linear-gradient(to bottom, #063d15, rgb(0, 60, 255));
   text-align: center;
+  border-bottom: 1px solid red;
 `;
 
-class Headerpanel extends Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return (
-      <HeaderCntPanel>
-        <ZstLogoImageComponent />
-      </HeaderCntPanel>
-    );
-  }
-}
+const HeaderPanelContainer = styled.div`
+  transform: scale(1);
+  transition: transform 0.7s ease;
 
-export default Headerpanel;
+  &:hover {
+    transform: scale(1.1);
+  }
+`;
+
+const HeaderPanel = () => {
+  return (
+    <HeaderCntPanel>
+      <HeaderPanelContainer>
+        <ZstLogoImageComponent />
+      </HeaderPanelContainer>
+    </HeaderCntPanel>
+  );
+};
+
+export default HeaderPanel;
